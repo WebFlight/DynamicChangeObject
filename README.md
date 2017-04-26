@@ -1,6 +1,7 @@
 # Mendix DynamicChangeObject module
 
 Welcome to the Mendix *DynamicChangeObject* module. This module provides a Java action that mimics the functionality of the Change object microflow activity, but enables the use of expressions for all inputs.
+
 ![DynamicChangeObject logo][5]
 
 # Table of Contents
@@ -25,17 +26,21 @@ Applicable in situations when dynamic behavior is desired for change of object m
 
 ### Change object in front-end
 This front-end implements the change object functionalities:
+
 ![Implement change object in front-end][1]
 
 The DynamicChangeObjectView object is used to pass all parameters from the front-end:
+
 ![DynamicChangeObjectView application][2]
 
 ### Set a new DateTime value:
 A new DateTime object is parsed as a string using the DATETIME_FORMAT constant:
+
 ![New DateTime value][3]
 
 The microflow in which the DateTime value is set:
- ![MicroFlow that sets new DateTime value][4]
+
+![MicroFlow that sets new DateTime value][4]
 
 # Technical implementation
 * Checks if the object member exists. If not, an error is shown and false is returned.
