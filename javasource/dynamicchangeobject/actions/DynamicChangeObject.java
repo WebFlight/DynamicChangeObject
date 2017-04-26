@@ -18,6 +18,9 @@ import dynamicchangeobject.repositories.MendixObjectRepository;
 import dynamicchangeobject.usecases.SetMemberValue;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
+/**
+ * Mimics the change object microflow activity and makes it possible to set the parameters dynamically.
+ */
 public class DynamicChangeObject extends CustomJavaAction<java.lang.Boolean>
 {
 	private IMendixObject InputObject;
