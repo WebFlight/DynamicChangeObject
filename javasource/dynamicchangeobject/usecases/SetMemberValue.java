@@ -1,26 +1,29 @@
-package dynamicchangeobject.helpers;
+package dynamicchangeobject.usecases;
 
 import com.mendix.core.CoreException;
 import com.mendix.logging.ILogNode;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
+import dynamicchangeobject.helpers.ValidateMemberValue;
 import dynamicchangeobject.proxies.ENU_Commit;
 import dynamicchangeobject.repositories.MendixObjectRepository;
 
 public class SetMemberValue {
 	private ILogNode logger;
 	private MendixObjectRepository mendixObjectRepository;
+	private ValidateMemberValue validateMemberValue;
 	private IMendixObject object;
 	private String member;
 	private String newValue;
 	private dynamicchangeobject.proxies.ENU_Commit commit;
 	private boolean refreshInClient;
 	
-	public SetMemberValue(ILogNode logger, MendixObjectRepository mendixObjectRepository, IMendixObject object, String member, String newValue, ENU_Commit commit,
+	public SetMemberValue(ILogNode logger, MendixObjectRepository mendixObjectRepository, ValidateMemberValue validateMemberValue, IMendixObject object, String member, String newValue, ENU_Commit commit,
 			boolean refreshInClient) {
 		super();
 		this.logger = logger;
 		this.mendixObjectRepository = mendixObjectRepository;
+		this.validateMemberValue = validateMemberValue;
 		this.object = object;
 		this.member = member;
 		this.newValue = newValue;
@@ -33,7 +36,7 @@ public class SetMemberValue {
 			logger.error("Member " + member + " does not exist. New value is not set.");
 			return false;
 		} else { 
-			Object newValueValidated = ValidateMemberValue.validate(mendixObjectRepository, object, member, newValue);
+			Object newValueValidated = validateMemberValue.validate(mendixObjectRepository, object, member, newValue);
 			mendixObjectRepository.setValue(object, member, newValueValidated);
 			commit();
 			refreshInClient();

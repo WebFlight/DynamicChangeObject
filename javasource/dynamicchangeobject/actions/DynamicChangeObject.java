@@ -13,9 +13,9 @@ import com.mendix.core.Core;
 import com.mendix.logging.ILogNode;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
-import dynamicchangeobject.helpers.SetMemberValue;
-import dynamicchangeobject.proxies.ENU_Commit;
+import dynamicchangeobject.helpers.ValidateMemberValue;
 import dynamicchangeobject.repositories.MendixObjectRepository;
+import dynamicchangeobject.usecases.SetMemberValue;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 public class DynamicChangeObject extends CustomJavaAction<java.lang.Boolean>
@@ -42,7 +42,8 @@ public class DynamicChangeObject extends CustomJavaAction<java.lang.Boolean>
 		// BEGIN USER CODE
 		ILogNode logger = Core.getLogger("DynamicChangeObject");
 		MendixObjectRepository mendixObjectRepository = new MendixObjectRepository(this.context());
-		SetMemberValue setMemberValue = new SetMemberValue(logger, mendixObjectRepository, InputObject, Member, NewValue, Commit, RefreshInClient);
+		ValidateMemberValue validateMemberValue = new ValidateMemberValue();
+		SetMemberValue setMemberValue = new SetMemberValue(logger, mendixObjectRepository, validateMemberValue, InputObject, Member, NewValue, Commit, RefreshInClient);
 		return setMemberValue.setValue();
 		// END USER CODE
 	}

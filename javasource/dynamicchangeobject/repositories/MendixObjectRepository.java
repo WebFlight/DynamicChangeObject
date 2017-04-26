@@ -6,6 +6,7 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.IMendixObjectMember;
 import dynamicchangeobject.proxies.constants.Constants;
+import static com.mendix.webui.FeedbackHelper.*;
 
 public class MendixObjectRepository {
 	private IContext context;
@@ -27,7 +28,7 @@ public class MendixObjectRepository {
 	}
 	
 	public void refresh (IMendixObject object) {
-		com.mendix.webui.FeedbackHelper.addRefreshObjectFeedback(context, object.getId());
+		addRefreshClass(context, object.getType());
 	}
 	
 	public IMendixObjectMember<?> getMember(IMendixObject object, String memberName) {

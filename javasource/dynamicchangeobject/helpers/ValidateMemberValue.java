@@ -16,7 +16,7 @@ public class ValidateMemberValue {
 	
 	public ValidateMemberValue() {}
 	
-	public static Object validate(MendixObjectRepository mendixObjectRepository, IMendixObject object, String memberName, String newValue) throws Exception {
+	public Object validate(MendixObjectRepository mendixObjectRepository, IMendixObject object, String memberName, String newValue) throws Exception {
 		IMendixObjectMember<?> member = mendixObjectRepository.getMember(object, memberName);
 		if (member instanceof MendixDateTime) {
 			DateFormat df = new SimpleDateFormat(mendixObjectRepository.getDateTimeFormat(), Locale.ENGLISH);
