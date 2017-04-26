@@ -23,7 +23,7 @@ public class ValidateMemberValue {
 			return df.parse(newValue);
 		}
 		if (member instanceof MendixBoolean) {
-			if(newValue.toLowerCase() == "true" || newValue.toLowerCase() == "false") {
+			if(newValue.toLowerCase().equals("true") || newValue.toLowerCase().equals("false")) {
 				return new Boolean(newValue);
 			}
 			throw new DataValidationRuntimeException("New value is not a boolean: true or false.");
