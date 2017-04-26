@@ -90,25 +90,25 @@ public class ValidateMemberValueTest {
 		String booleanString = "noboolean";
 		
 		when(mendixObjectRepository.getMember(object, "BooleanAttribute")).thenReturn((IMendixObjectMember) mendixBoolean);
-		boolean actualBoolean = (boolean) validateMemberValue.validate(mendixObjectRepository, object, "BooleanAttribute", booleanString);
+		validateMemberValue.validate(mendixObjectRepository, object, "BooleanAttribute", booleanString);
 	}
 	
 	@Test(expected = MendixRuntimeException.class)
 	public void TestAutoNumberException() throws Exception {		
 		when(mendixObjectRepository.getMember(object, "AutoNumberAttribute")).thenReturn((IMendixObjectMember) mendixAutoNumber);
-		String actualValue = (String) validateMemberValue.validate(mendixObjectRepository, object, "AutoNumberAttribute", "NewValue");
+		validateMemberValue.validate(mendixObjectRepository, object, "AutoNumberAttribute", "NewValue");
 	}
 	
 	@Test(expected = MendixRuntimeException.class)
 	public void TestObjectReferenceException() throws Exception {		
 		when(mendixObjectRepository.getMember(object, "ReferenceAttribute")).thenReturn((IMendixObjectMember) mendixObjectReference);
-		String actualValue = (String) validateMemberValue.validate(mendixObjectRepository, object, "ReferenceAttribute", "NewValue");
+		validateMemberValue.validate(mendixObjectRepository, object, "ReferenceAttribute", "NewValue");
 	}
 	
 	@Test(expected = MendixRuntimeException.class)
 	public void TestObjectReferenceSetException() throws Exception {		
 		when(mendixObjectRepository.getMember(object, "ReferenceSetAttribute")).thenReturn((IMendixObjectMember) mendixObjectReferenceSet);
-		String actualValue = (String) validateMemberValue.validate(mendixObjectRepository, object, "ReferenceSetAttribute", "NewValue");
+		validateMemberValue.validate(mendixObjectRepository, object, "ReferenceSetAttribute", "NewValue");
 	}
 	
 	@Test

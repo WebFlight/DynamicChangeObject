@@ -38,4 +38,8 @@ public class MendixObjectRepository {
 	public String getDateTimeFormat() {
 		return Constants.getDATETIME_FORMAT();
 	}
+
+	public boolean hasMember(IMendixObject object, String member) {
+		return(object.hasMember(member));
+	}
 }

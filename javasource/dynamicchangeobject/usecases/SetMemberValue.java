@@ -45,7 +45,7 @@ public class SetMemberValue {
 	}
 	
 	private boolean isInvalidMember() {
-		if (!object.hasMember(member)) {
+		if (!mendixObjectRepository.hasMember(object, member)) {
 			return true;
 		} else {
 			return false;
