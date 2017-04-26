@@ -1,11 +1,7 @@
 # Mendix DynamicChangeObject module
 
-Welcome to the Mendix *DynamicChangeObject* module. This module provides a Java action that mimics the functionality of the Change object microflow activity, but enables the use of expressions for all inputs:
-* Object
-* Member name
-* New value
-* Commit behavior
-* Refresh in client
+Welcome to the Mendix *DynamicChangeObject* module. This module provides a Java action that mimics the functionality of the Change object microflow activity, but enables the use of expressions for all inputs.
+![DynamicChangeObject logo][5]
 
 # Table of Contents
 
@@ -55,3 +51,4 @@ The microflow in which the DateTime value is set:
  [2]: docs/DynamicChangeObject_Window.PNG
  [3]: docs/DynamicChangeObject_WindowDateTime.PNG
  [4]: docs/DynamicChangeObject_Microflow.PNG
+ [5]: docs/DynamicChangeObject_logo.png
