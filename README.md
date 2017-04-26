@@ -2,6 +2,7 @@
 
 Welcome to the Mendix *DynamicChangeObject* module. This module provides a Java action that mimics the functionality of the Change object microflow activity, but enables the use of expressions for all inputs.
 
+
 ![DynamicChangeObject logo][5]
 
 # Table of Contents
