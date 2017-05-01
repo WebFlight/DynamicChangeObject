@@ -53,8 +53,8 @@ The microflow in which the DateTime value is set:
 # Development notes
 * For contributions: fork this repository, make changes, fix/add unit tests in dynamicchangeobject.tests package and issue pull request.
 
- [1]: docs/DynamicChangeObject_Popup.PNG
- [2]: docs/DynamicChangeObject_Window.PNG
- [3]: docs/DynamicChangeObject_WindowDateTime.PNG
- [4]: docs/DynamicChangeObject_Microflow.PNG
- [5]: docs/DynamicChangeObject_logo.png
+ [1]: https://github.com/WebFlight/DynamicChangeObject/blob/master/docs/DynamicChangeObject_Popup.PNG
+ [2]: https://github.com/WebFlight/DynamicChangeObject/blob/master/docs/DynamicChangeObject_Window.PNG
+ [3]: https://github.com/WebFlight/DynamicChangeObject/blob/master/docs/DynamicChangeObject_WindowDateTime.PNG
+ [4]: https://github.com/WebFlight/DynamicChangeObject/blob/master/docs/DynamicChangeObject_Microflow.PNG
+ [5]: https://github.com/WebFlight/DynamicChangeObject/blob/master/docs/DynamicChangeObject_logo.png
