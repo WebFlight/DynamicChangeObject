@@ -29,6 +29,7 @@ public class MendixObjectRepository {
 	
 	public void refresh (IMendixObject object) {
 		addRefreshClass(context, object.getType());
+		addRefreshObjectFeedback(context, object.getId());
 	}
 	
 	public IMendixObjectMember<?> getMember(IMendixObject object, String memberName) {
